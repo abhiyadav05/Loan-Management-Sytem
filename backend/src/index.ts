@@ -8,12 +8,14 @@ import salesRoutes from "./routes/sales";
 import sanctionRoutes from "./routes/sanction";
 import disbursementRoutes from "./routes/disbursement";
 import collectionRoutes from "./routes/collection";
+import cors from "cors";
 
 dotenv.config();
 
 const app = express();
 
 connectDB();
+app.use(cors());
 app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 
